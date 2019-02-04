@@ -17,19 +17,38 @@ recursionAnswers = {
    * @returns {Number[]} The files under the directory dirName, including subdiretories.
    */
   listFiles: function listFiles(data, dirName) {
-
+    //can't get problem statement whether to list file name or return count of files
+    /*
+    let result = [];
+    function traverse(result, data, dirName = '') {
+    
+      if (data.subDirs.length) {
+          data.subDirs.forEach(data => {
+              traverse(result, data);
+          });
+      }
+      result.push(data.files.length);
+    }*/
   },
 
   /**
    * Determines the fibonacci number at position n.
    * https://en.wikipedia.org/wiki/Fibonacci_number
-   * 
+   *
    * The first few fibonacci numbers are: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
-   * 
+   *
    * @param {Number} n - the index of the fibonacci number desired
    * @returns {Number} The nth fibonacci number
    */
   fibonacci: function fibonacci(n) {
-
-  },
+    let i = 0,
+      j = 1,
+      next;
+    for (let k = 0; k < n - 1; k++ ) {
+      next = i + j;
+      i = j;
+      j = next;
+    }
+    return next;
+  }
 };
